@@ -47,7 +47,7 @@ export default async function DashboardLayout({
         <div className="bg-white border border-[#e2e2e2] rounded-2xl p-6 mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-4">
             <div className="h-14 w-14 rounded-2xl bg-[#3e6ae1]/10 border border-[#3e6ae1]/20 flex items-center justify-center shrink-0">
-              <CyberPlusLogo className="h-7 w-7 text-[#3e6ae1]" />
+              <CyberPlusLogo size={32} className="h-8 w-8" />
             </div>
             <div>
               <div className="flex items-center gap-2">

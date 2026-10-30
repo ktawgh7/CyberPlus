@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     "CyberPlus gives every person a verified proof-of-human profile that bots, deepfakes, and fraudsters cannot copy — without exposing who they are.",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon.png", type: "image/png" },
+      { url: "/logo.png", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "CyberPlus — Proving you are a human",

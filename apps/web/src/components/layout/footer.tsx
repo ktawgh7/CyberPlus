@@ -31,7 +31,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3 group">
-              <CyberPlusLogo className="h-6 w-6 text-[#171a20]" />
+              <CyberPlusLogo size={28} className="h-7 w-7" />
               <span className="text-base font-bold tracking-tight text-[#171a20]">
                 Cyber<span className="text-[#3e6ae1]">Plus</span>
               </span>

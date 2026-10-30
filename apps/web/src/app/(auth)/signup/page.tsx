@@ -76,7 +76,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 group">
-            <CyberPlusLogo className="h-8 w-8 text-[#171a20] group-hover:scale-105 transition-transform" />
+            <CyberPlusLogo size={36} className="h-9 w-9 group-hover:scale-105 transition-transform" />
             <span className="text-2xl font-bold tracking-tight text-[#171a20]">
               Cyber<span className="text-[#3e6ae1]">Plus</span>
             </span>
