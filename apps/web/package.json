@@ -1,0 +1,57 @@
+{
+  "name": "@cyberplus/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@prisma/client": "^6.6.0",
+    "@simplewebauthn/browser": "^13.1.0",
+    "@simplewebauthn/server": "^13.1.0",
+    "@node-rs/argon2": "^2.0.2",
+    "jose": "^5.9.6",
+    "nodemailer": "^6.9.16",
+    "stripe": "^17.7.0",
+    "@semaphore-protocol/identity": "^4.2.0",
+    "@semaphore-protocol/group": "^4.2.0",
+    "@semaphore-protocol/proof": "^4.2.0",
+    "zod": "^3.24.0",
+    "lucide-react": "^0.500.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^3.0.0",
+    "class-variance-authority": "^0.7.0",
+    "framer-motion": "^12.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/nodemailer": "^6.4.17",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "postcss": "^8.5.0",
+    "prisma": "^6.6.0",
+    "tsx": "^4.19.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.3.0",
+    "@eslint/eslintrc": "^3.0.0",
+    "vitest": "^3.0.0",
+    "@playwright/test": "^1.52.0"
+  }
+}
+

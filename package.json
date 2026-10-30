@@ -1,0 +1,27 @@
+{
+  "name": "cyberplus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CyberPlus - Proving you are a human",
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "pnpm --filter @cyberplus/web build",
+    "start": "pnpm --filter @cyberplus/web start",
+    "lint": "pnpm --filter @cyberplus/web lint",
+    "db:push": "pnpm --filter @cyberplus/web db:push",
+    "db:seed": "pnpm --filter @cyberplus/web db:seed",
+    "db:studio": "pnpm --filter @cyberplus/web db:studio",
+    "test": "pnpm --filter @cyberplus/web test",
+    "test:e2e": "pnpm --filter @cyberplus/web test:e2e"
+  },
+  "packageManager": "pnpm@12.15.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma",
+      "unrs-resolver"
+    ]
+  }
+}
