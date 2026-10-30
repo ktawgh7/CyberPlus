@@ -161,8 +161,8 @@ export default function HowThePrototypeWorksPage() {
               <Link href="/pricing">
                 <Button size="sm">Get Started</Button>
               </Link>
-              <Link href="/developers">
-                <Button variant="outline" size="sm">Test Developer API</Button>
+              <Link href="/solutions">
+                <Button variant="outline" size="sm">Explore Solutions</Button>
               </Link>
             </div>
           </div>

@@ -233,13 +233,13 @@ export default function PricingPage() {
               </div>
               <div className="p-6 rounded-xl bg-[#f9f9f9] border border-[#e2e2e2] text-center space-y-3">
                 <Zap className="h-8 w-8 text-[#3e6ae1] mx-auto" />
-                <h4 className="font-bold text-base text-[#171a20]">Generate Sandbox API Key</h4>
+                <h4 className="font-bold text-base text-[#171a20]">Custom Integration</h4>
                 <p className="text-xs text-[#5c5e62]">
-                  Ready to test? Create a sandbox API key in 10 seconds from your developer dashboard.
+                  Need custom verification limits or high-volume enterprise SLAs? Contact our solutions team.
                 </p>
-                <Link href="/developers">
+                <Link href="/support">
                   <Button size="sm" className="w-full">
-                    Go to Developer Portal
+                    Contact Solutions Team
                   </Button>
                 </Link>
               </div>

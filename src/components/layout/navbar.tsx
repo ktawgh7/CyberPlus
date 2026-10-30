@@ -14,7 +14,6 @@ const navigation = [
   { name: "Resources", href: "/resources" },
   { name: "Support", href: "/support" },
   { name: "Pricing", href: "/pricing" },
-  { name: "Developers", href: "/developers" },
 ];
 
 export function Navbar() {
