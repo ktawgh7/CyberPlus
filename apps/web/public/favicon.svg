@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <path d="M16 2L4 7v9c0 8.4 10.8 13.4 12 14 1.2-.6 12-5.6 12-14V7L16 2z" fill="#0d9488"/>
-  <path d="M13 16l3 3 5-5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- CyberPlus Shield Outline -->
+  <path
+    d="M50 12 C38 17 26 21 18 24 L18 52 C18 72 34 84 50 91 C66 84 82 72 82 52 L82 24 C74 21 62 17 50 12 Z"
+    stroke="#171a20"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <!-- Plus Sign Center -->
+  <path
+    d="M50 36 V64 M36 50 H64"
+    stroke="#171a20"
+    stroke-width="8.5"
+    stroke-linecap="square"
+  />
 </svg>

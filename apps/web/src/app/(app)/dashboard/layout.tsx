@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { Badge } from "@/components/ui/badge";
+import { CyberPlusLogo } from "@/components/ui/logo";
 import {
   Shield,
   Key,
@@ -46,7 +47,7 @@ export default async function DashboardLayout({
         <div className="bg-white border border-[#e2e2e2] rounded-2xl p-6 mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-4">
             <div className="h-14 w-14 rounded-2xl bg-[#3e6ae1]/10 border border-[#3e6ae1]/20 flex items-center justify-center shrink-0">
-              <Shield className="h-7 w-7 text-[#3e6ae1]" />
+              <CyberPlusLogo className="h-7 w-7 text-[#3e6ae1]" />
             </div>
             <div>
               <div className="flex items-center gap-2">

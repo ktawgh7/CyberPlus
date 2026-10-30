@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CyberPlusLogo } from "@/components/ui/logo";
 
 const navigation = [
   { name: "Product", href: "/product" },
@@ -63,9 +64,9 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between">
-          {/* Logo — Tesla style sleek typography */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <Shield className="h-6 w-6 text-[#171a20] transition-transform group-hover:scale-105" />
+          {/* Logo — Tesla style sleek typography with Shield+ logo */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <CyberPlusLogo className="h-6 w-6 text-[#171a20] transition-transform group-hover:scale-105" />
             <span className="text-lg font-bold tracking-tight text-[#171a20]">
               Cyber<span className="text-[#3e6ae1]">Plus</span>
             </span>

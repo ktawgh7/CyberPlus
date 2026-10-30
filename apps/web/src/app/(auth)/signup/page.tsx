@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, AlertCircle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { CyberPlusLogo } from "@/components/ui/logo";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -75,7 +76,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 group">
-            <Shield className="h-8 w-8 text-[#171a20] group-hover:scale-105 transition-transform" />
+            <CyberPlusLogo className="h-8 w-8 text-[#171a20] group-hover:scale-105 transition-transform" />
             <span className="text-2xl font-bold tracking-tight text-[#171a20]">
               Cyber<span className="text-[#3e6ae1]">Plus</span>
             </span>
