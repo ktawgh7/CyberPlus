@@ -4,11 +4,16 @@ import Link from "next/link";
 import { ARTICLES } from "@/lib/articles";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Share2, Shield } from "lucide-react";
-import { Section } from "@/components/layout/section";
+import { ArrowLeft, Calendar, Clock, Shield } from "lucide-react";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return ARTICLES.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
@@ -117,7 +122,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               Enroll your passkey to generate real zero-knowledge proofs and experience proof-of-human.
             </p>
           </div>
-          <Link href="/signup">
+          <Link href="/pricing">
             <Button size="lg" className="shrink-0">
               Create Free Profile
             </Button>

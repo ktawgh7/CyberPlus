@@ -112,13 +112,41 @@
     background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
     background-size: 24px 24px;
   }
+
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
+  }
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+/* Calm page rise-up & refresh motion */
+@keyframes calmRiseUp {
+  0% {
+    opacity: 0.12;
+    transform: translate3d(0, 36px, 0);
   }
+  30% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes calmNavFade {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-calm-rise {
+  animation: calmRiseUp 720ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.nav-calm-fade {
+  animation: calmNavFade 380ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }

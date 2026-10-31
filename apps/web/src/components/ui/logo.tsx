@@ -8,6 +8,7 @@ interface LogoProps {
   width?: number;
   height?: number;
   alt?: string;
+  priority?: boolean;
 }
 
 export function CyberPlusLogo({
@@ -16,6 +17,7 @@ export function CyberPlusLogo({
   width,
   height,
   alt = "CyberPlus",
+  priority = false,
 }: LogoProps) {
   const w = width ?? size;
   const h = height ?? size;
@@ -26,8 +28,10 @@ export function CyberPlusLogo({
       alt={alt}
       width={w}
       height={h}
+      sizes={`${w}px`}
+      decoding="async"
       className={cn("shrink-0 object-contain", className)}
-      priority
+      priority={priority}
     />
   );
 }

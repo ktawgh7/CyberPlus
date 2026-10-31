@@ -1,205 +1,22 @@
-"use client";
-
-import React, { useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/layout/page-header";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
-import { Check, ArrowRight, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import { PricingPlans } from "@/components/shared/pricing-plans";
+import { Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Pricing — Simple, Predictable Humanity Verification",
+  description:
+    "Individual proof-of-human profiles are free forever. Explore CyberPlus Business, Enterprise, and usage-based verifier pricing.",
+};
 
 export default function PricingPage() {
-  const [annual, setAnnual] = useState(false);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
-
-  const handleBusinessCheckout = async () => {
-    setCheckoutLoading(true);
-    try {
-      const res = await fetch("/api/stripe/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: annual ? "business_annual" : "business_monthly" }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        // Fallback demo redirect
-        alert("Redirecting to Stripe Test Mode Checkout: " + (data.message || "Simulated Session"));
-      }
-    } catch (e) {
-      alert("Stripe Test Mode: Setup required or redirecting to simulated portal.");
-    } finally {
-      setCheckoutLoading(false);
-    }
-  };
-
   return (
     <div className="pb-24">
-      <PageHeader
-        badge="Illustrative Pilot Pricing"
-        title="Simple, Predictable Humanity Verification"
-        description="Individual proof-of-human profiles are free forever. Enterprises pay per enrolled employee. Verifier applications pay a low per-verification utility fee."
-      >
-        <div className="flex items-center justify-center gap-3 mt-4">
-          <span className={`text-sm ${!annual ? "font-bold text-foreground" : "text-muted-foreground"}`}>
-            Monthly
-          </span>
-          <button
-            onClick={() => setAnnual(!annual)}
-            className="w-12 h-6 rounded-full bg-[#e2e2e2] dark:bg-[#222222] p-1 relative transition-colors cursor-pointer"
-            aria-label="Toggle billing frequency"
-          >
-            <div
-              className={`w-4 h-4 rounded-full bg-[#3e6ae1] transition-transform ${
-                annual ? "translate-x-6" : "translate-x-0"
-              }`}
-            />
-          </button>
-          <span className={`text-sm flex items-center gap-1 ${annual ? "font-bold text-foreground" : "text-muted-foreground"}`}>
-            Annual <Badge variant="prototype" className="text-[10px]">Save 20%</Badge>
-          </span>
-        </div>
-      </PageHeader>
-
-      {/* PLANS GRID */}
-      <Section className="pt-0">
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Individual */}
-          <Card className="border-cyber-200 dark:border-cyber-800 flex flex-col justify-between">
-            <CardHeader>
-              <Badge variant="secondary" className="w-fit mb-2">For Individuals</Badge>
-              <CardTitle className="text-2xl font-bold">Individual</CardTitle>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold">$0</span>
-                <span className="text-sm text-muted-foreground">/ forever</span>
-              </div>
-              <CardDescription className="text-xs mt-2">
-                Your personal proof of human across all integrated apps and websites.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2.5 text-xs text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Tier 1 Basic (Remote passkey biometric unlock)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Encrypted device-side recovery kit</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Instant self-service key freeze & rotation</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Unlimited zero-knowledge proofs generated</span>
-                </li>
-              </ul>
-              <div className="pt-6">
-                <Link href="/support">
-                  <Button variant="outline" className="w-full">Get Started Free</Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Business */}
-          <Card className="border-accent-500 dark:border-accent-400 glow-accent relative flex flex-col justify-between">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <Badge>Most Popular for Teams</Badge>
-            </div>
-            <CardHeader>
-              <Badge variant="outline" className="w-fit mb-2 border-accent-400 text-accent-400">
-                For Organizations
-              </Badge>
-              <CardTitle className="text-2xl font-bold">Business</CardTitle>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold">
-                  {annual ? "$7.20" : "$9.00"}
-                </span>
-                <span className="text-sm text-muted-foreground">/ user / mo</span>
-              </div>
-              <CardDescription className="text-xs mt-2">
-                Protect corporate video calls, wire transfers, and internal employee identity.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2.5 text-xs text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span className="text-foreground font-medium">Everything in Individual, plus:</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Tier 2 & Tier 3 in-person center appointments</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Wire transfer protection policy engine</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Central organization management & CSV invites</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Two-officer in-person physical recovery protocol</span>
-                </li>
-              </ul>
-              <div className="pt-6">
-                <Link href="/support">
-                  <Button className="w-full font-bold">
-                    Start Business Pilot
-                  </Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Enterprise */}
-          <Card className="border-cyber-200 dark:border-cyber-800 flex flex-col justify-between">
-            <CardHeader>
-              <Badge variant="secondary" className="w-fit mb-2">High Assurance</Badge>
-              <CardTitle className="text-2xl font-bold">Enterprise</CardTitle>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-3xl font-extrabold">Custom</span>
-              </div>
-              <CardDescription className="text-xs mt-2">
-                Dedicated on-premise verification nodes, certified enrollment centers, and custom SLAs.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2.5 text-xs text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Custom verification volume commitments</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Dedicated officer onboarding & training</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>White-label SDK & custom JWKS keys</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>99.99% uptime SLA & 24/7 incident response</span>
-                </li>
-              </ul>
-              <div className="pt-6">
-                <Link href="/support">
-                  <Button variant="outline" className="w-full">Contact Enterprise Team</Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
+      <PricingPlans />
 
       {/* VERIFIER USAGE MODEL */}
       <Section dark>
@@ -209,7 +26,7 @@ export default function PricingPage() {
           subtitle="How platforms and applications pay for checking proof-of-human tokens."
         />
         <div className="max-w-4xl mx-auto">
-          <Card className="border-cyber-200 dark:border-cyber-800 p-6 md:p-8">
+          <Card className="border-cyber-200 p-6 md:p-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-xl font-bold mb-2">Developer Utility Model</h3>
@@ -219,7 +36,7 @@ export default function PricingPage() {
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between py-1.5 border-b border-[#e2e2e2]">
                     <span className="text-[#5c5e62]">Sandbox Test Verifications</span>
-                    <span className="font-bold text-[#3e6ae1]">Free & Unlimited</span>
+                    <span className="font-bold text-[#3e6ae1]">Free &amp; Unlimited</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-[#e2e2e2]">
                     <span className="text-[#5c5e62]">First 5,000 Live Checks / mo</span>
@@ -274,4 +91,3 @@ export default function PricingPage() {
     </div>
   );
 }
-

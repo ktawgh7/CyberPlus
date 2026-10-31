@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
-  Shield,
-  Key,
   Fingerprint,
   RotateCw,
   Lock,
-  FileCheck,
   Check,
   X,
-  ArrowRight,
   ShieldAlert,
   Cpu,
   EyeOff,
@@ -20,7 +17,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { PageHeader } from "@/components/layout/page-header";
-import { VerificationPlayground } from "@/components/shared/verification-playground";
+
+const VerificationPlayground = dynamic(
+  () =>
+    import("@/components/shared/verification-playground").then(
+      (m) => m.VerificationPlayground
+    ),
+  {
+    loading: () => (
+      <div className="h-[420px] rounded-2xl border border-[#e2e2e2] bg-white animate-pulse" />
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: "Product — How CyberPlus Works",

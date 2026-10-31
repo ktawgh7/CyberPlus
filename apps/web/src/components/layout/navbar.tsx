@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CyberPlusLogo } from "@/components/ui/logo";
+import { triggerCalmHomeRefresh } from "@/components/layout/page-transition";
 
 const navigation = [
   { name: "Product", href: "/product" },
@@ -30,24 +31,48 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false);
+    if (
+      e.button !== 0 ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey
+    ) {
+      return;
+    }
+
+    if (pathname === "/" || window.location.pathname === "/") {
+      e.preventDefault();
+      triggerCalmHomeRefresh();
+    }
+  };
 
   return (
     <nav
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-200",
+        "nav-calm-fade fixed top-0 z-50 w-full transition-all duration-200",
         scrolled
           ? "bg-white/95 backdrop-blur-xl border-b border-[#e2e2e2] shadow-xs"
           : "bg-white/85 backdrop-blur-md border-b border-[#eeeeee]"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[60px] items-center justify-between">
+        <div className="flex h-[62px] items-center justify-between">
           {/* Logo — Tesla style sleek typography with exact Shield+ logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <CyberPlusLogo size={28} className="h-7 w-7 transition-transform group-hover:scale-105" />
+          <Link
+            href="/"
+            prefetch
+            onClick={handleBrandClick}
+            className="flex items-center gap-2 group"
+          >
+            <CyberPlusLogo size={41} priority className="h-[40.32px] w-[40.32px]" />
             <span className="text-lg font-bold tracking-tight text-[#171a20]">
               Cyber<span className="text-[#3e6ae1]">Plus</span>
             </span>
@@ -59,6 +84,7 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
+                prefetch
                 className={cn(
                   "rounded-md px-3.5 py-1.5 text-sm font-medium tracking-normal transition-colors",
                   pathname === item.href || pathname.startsWith(item.href + "/")
@@ -74,12 +100,7 @@ export function Navbar() {
           {/* Right side — CTAs */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:flex sm:items-center sm:gap-2">
-              <Link href="/support">
-                <Button variant="ghost" size="sm">
-                  Contact
-                </Button>
-              </Link>
-              <Link href="/pricing">
+              <Link href="/pricing" prefetch>
                 <Button size="sm" className="rounded-md">
                   Get Started
                 </Button>
@@ -89,7 +110,7 @@ export function Navbar() {
             {/* Mobile menu button */}
             <button
               className="lg:hidden rounded-full p-2 text-[#5c5e62] hover:text-[#171a20] hover:bg-[#f4f4f4] transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen((prev) => !prev)}
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -100,12 +121,13 @@ export function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
+      {isOpen ? (
         <div className="lg:hidden border-b border-[#e2e2e2] bg-white px-4 pt-3 pb-6 space-y-1 shadow-lg animate-in slide-in-from-top-2">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
+              prefetch
               onClick={() => setIsOpen(false)}
               className={cn(
                 "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
@@ -118,19 +140,14 @@ export function Navbar() {
             </Link>
           ))}
           <div className="pt-4 border-t border-[#e2e2e2] flex flex-col gap-2">
-            <Link href="/support" onClick={() => setIsOpen(false)}>
-              <Button variant="outline" className="w-full">
-                Contact
-              </Button>
-            </Link>
-            <Link href="/pricing" onClick={() => setIsOpen(false)}>
+            <Link href="/pricing" prefetch onClick={() => setIsOpen(false)}>
               <Button className="w-full">
                 Get Started
               </Button>
             </Link>
           </div>
         </div>
-      )}
+      ) : null}
     </nav>
   );
 }

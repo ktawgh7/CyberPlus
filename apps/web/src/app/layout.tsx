@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { PageTransition } from "@/components/layout/page-transition";
 
 export const metadata: Metadata = {
   title: {
-    default: "CyberPlus — Proving you are a human",
+    default: "CyberPlus — Proving you're a human",
     template: "%s | CyberPlus",
   },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "CyberPlus — Proving you are a human",
+    title: "CyberPlus — Proving you're a human",
     description:
       "CyberPlus gives every person a verified proof-of-human profile that bots, deepfakes, and fraudsters cannot copy — without exposing who they are.",
     type: "website",
@@ -35,8 +36,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased min-h-screen flex flex-col bg-white text-[#171a20] selection:bg-[#3e6ae1] selection:text-white">
         <Navbar />
-        <main className="flex-1 bg-white">{children}</main>
-        <Footer />
+        <PageTransition>
+          <main className="flex-1 bg-white">{children}</main>
+          <Footer />
+        </PageTransition>
       </body>
     </html>
   );

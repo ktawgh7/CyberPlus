@@ -15,9 +15,6 @@ import {
   ArrowRight,
   UserX,
   Video,
-  MessageSquare,
-  ArrowUp,
-  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeader } from "@/components/layout/section";
 
 export const metadata: Metadata = {
-  title: "CyberPlus — Proving you are a human",
+  title: "CyberPlus — Proving you're a human",
   description:
     "CyberPlus gives every person a verified proof-of-human profile that bots, deepfakes, and fraudsters cannot copy — without exposing who they are.",
 };
@@ -92,29 +89,29 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* ===== HERO — Pure White Tesla.com Website Style ===== */}
-      <section className="relative min-h-[88vh] flex flex-col justify-between pt-28 pb-12 overflow-hidden bg-white border-b border-[#e2e2e2]">
+      <section className="relative min-h-screen min-h-dvh w-full flex flex-col pt-[62px] overflow-hidden bg-white border-b border-[#e2e2e2]">
         {/* Subtle geometric grid background */}
         <div className="absolute inset-0 bg-grid opacity-50 pointer-events-none" />
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-[#3e6ae1]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-neutral-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-[10%] right-1/4 w-[min(24rem,45vw)] h-[min(24rem,45dvh)] bg-[#3e6ae1]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-[10%] left-1/4 w-[min(18rem,40vw)] h-[min(18rem,40dvh)] bg-neutral-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 text-center">
-          <Badge variant="prototype" className="mb-6">
+        <div className="relative flex-1 flex flex-col items-center justify-center mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-[clamp(1.5rem,4dvh,3.5rem)] pb-[clamp(2rem,8dvh,5rem)] text-center">
+          <Badge variant="prototype" className="mb-[clamp(1rem,2.5dvh,1.5rem)]">
             Early-stage prototype
           </Badge>
 
           {/* Tesla-style bold title */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#171a20] leading-tight">
-            Proving you are a human
+          <h1 className="text-[clamp(2.25rem,min(6vw,8.5dvh),4.5rem)] font-bold tracking-tight text-[#171a20] leading-[1.1]">
+            Proving you&apos;re a human
           </h1>
 
-          <p className="mt-4 text-lg sm:text-xl text-[#5c5e62] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-[clamp(0.75rem,2dvh,1.25rem)] text-[clamp(1rem,min(2vw,2.5dvh),1.25rem)] text-[#5c5e62] max-w-2xl mx-auto leading-relaxed">
             CyberPlus gives every person a verified &ldquo;proof of human&rdquo; profile
             that bots, deepfakes, and fraudsters cannot copy &mdash; without exposing who they are.
           </p>
 
           {/* Side-by-side Tesla CTA Buttons: Electric Blue "Order Now" style & White "Learn More" style */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-[clamp(1.5rem,3.5dvh,2.25rem)] flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/pricing">
               <Button size="xl" className="min-w-[180px]">
                 Try it free
@@ -125,37 +122,6 @@ export default function HomePage() {
               <Button variant="secondary" size="xl" className="min-w-[180px]">
                 See how it works
               </Button>
-            </Link>
-          </div>
-
-          {/* Tesla Carousel Dots */}
-          <div className="mt-12 flex items-center justify-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-[#171a20]" />
-            <span className="h-2 w-2 rounded-full bg-[#d0d1d2]" />
-            <span className="h-2 w-2 rounded-full bg-[#d0d1d2]" />
-          </div>
-        </div>
-
-        {/* Tesla.com Bottom Floating Action / Utility Bar */}
-        <div className="relative mx-auto max-w-4xl px-4 mt-8 w-full">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/support"
-              className="w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-2.5 rounded-md bg-[#f4f4f4] hover:bg-[#ebebeb] border border-[#e2e2e2] text-xs font-medium text-[#5c5e62] transition-colors"
-            >
-              <div className="flex items-center gap-2">
-                <MessageSquare className="h-4 w-4 text-[#171a20]" />
-                <span>Ask a Question &ldquo;How does zero-knowledge proof work?&rdquo;</span>
-              </div>
-              <ArrowUp className="h-3.5 w-3.5 text-[#5c5e62]" />
-            </Link>
-
-            <Link
-              href="/demo/bank"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-white hover:bg-[#f4f4f4] border border-[#d0d1d2] text-xs font-medium text-[#171a20] transition-colors"
-            >
-              <ShieldCheck className="h-4 w-4 text-[#3e6ae1]" />
-              <span>Test Live Bank Transfer Demo</span>
             </Link>
           </div>
         </div>
@@ -379,7 +345,7 @@ export default function HomePage() {
                 <h3 className="font-bold text-lg text-[#171a20]">{plan.name}</h3>
                 <p className="text-3xl font-bold mt-2 text-[#171a20]">{plan.price}</p>
                 <p className="text-sm text-[#5c5e62] mt-2">{plan.desc}</p>
-                <Link href={plan.name === "Enterprise" ? "/support" : "/signup"}>
+                <Link href={plan.name === "Enterprise" ? "/support" : "/pricing"}>
                   <Button
                     variant={plan.featured ? "default" : "secondary"}
                     className="mt-6 w-full"

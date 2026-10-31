@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { PageHeader } from "@/components/layout/page-header";
-import { BookOpen, FileText, ArrowRight, Search, ShieldCheck } from "lucide-react";
+import { BookOpen, FileText, ArrowRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Resources & Articles — CyberPlus",

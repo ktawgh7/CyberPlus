@@ -8,9 +8,7 @@ import {
   Star,
   Landmark,
   ArrowRight,
-  ShieldAlert,
   CheckCircle2,
-  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -86,7 +84,7 @@ const solutions = [
     title: "Government & Public Benefit Distribution",
     scenario:
       "Government portals delivering disaster relief or social benefits suffer from automated identity theft and synthetic duplicate applications. CyberPlus Tier 3 anchors in-person center verification with multi-officer sign-off, providing high-assurance single-human distribution while safeguarding citizen privacy.",
-    demoUrl: "/officer",
+    demoUrl: "/security",
     demoLabel: "View Officer In-Person Flow",
     tierNeeded: "Tier 3 High Assurance",
     impact: "Closes fraud loops on multi-application benefit fraud",

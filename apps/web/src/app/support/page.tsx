@@ -1,39 +1,19 @@
-"use client";
-
-import React, { useState } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
-import { ShieldAlert, Send, CheckCircle2, AlertCircle, HelpCircle, LifeBuoy, Key } from "lucide-react";
+import { SupportContactForm } from "@/components/shared/support-contact-form";
+import { ShieldAlert, LifeBuoy, Key } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Support & Emergency Response — CyberPlus",
+  description:
+    "Reach the CyberPlus security team, request integration assistance, or trigger an instant emergency key freeze.",
+};
 
 export default function SupportPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [body, setBody] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
-
-    setTimeout(() => {
-      setStatus("success");
-      setName("");
-      setEmail("");
-      setSubject("");
-      setBody("");
-    }, 600);
-  };
-
   return (
     <div className="pb-24">
       <PageHeader
@@ -79,97 +59,14 @@ export default function SupportPage() {
       {/* CONTACT FORM & TICKETS */}
       <Section>
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Form */}
-          <div>
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold">Contact Our Security Team</h2>
-              <p className="text-sm text-muted-foreground mt-1">
-                Submissions are stored in our support database and dispatch email notifications to team inboxes.
-              </p>
-            </div>
-
-            {status === "success" && (
-              <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-emerald-300 text-sm flex items-start gap-3 mb-6">
-                <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold">Message Delivered Successfully</p>
-                  <p className="text-xs text-emerald-400 mt-1">
-                    Your inquiry has been logged. A confirmation email has been dispatched to your inbox.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {status === "error" && (
-              <div className="p-4 rounded-xl bg-[#f4f4f4] border border-[#d0d1d2] text-[#171a20] text-sm flex items-start gap-3 mb-6">
-                <AlertCircle className="h-5 w-5 text-[#5c5e62] shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold">Submission Failed</p>
-                  <p className="text-xs text-[#5c5e62] mt-1">{errorMsg}</p>
-                </div>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-cyber-400">Your Full Name</label>
-                <Input
-                  required
-                  placeholder="e.g. Elena Rostova"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-cyber-400">Email Address</label>
-                <Input
-                  required
-                  type="email"
-                  placeholder="you@domain.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-cyber-400">Subject</label>
-                <Input
-                  required
-                  placeholder="e.g. Enterprise API Question / Partnership Inquiry"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-cyber-400">Message</label>
-                <Textarea
-                  required
-                  rows={4}
-                  placeholder="Describe your inquiry or technical question..."
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={status === "loading"}
-                className="w-full"
-              >
-                <Send className="mr-2 h-4 w-4" />
-                {status === "loading" ? "Transmitting..." : "Send Secure Message"}
-              </Button>
-            </form>
-          </div>
+          <SupportContactForm />
 
           {/* Ticket System & Officer Access */}
           <div className="space-y-6 flex flex-col justify-between">
-            <Card className="border-cyber-200 dark:border-cyber-800">
+            <Card className="border-cyber-200">
               <CardHeader>
-                <div className="h-10 w-10 rounded-lg bg-accent-500/10 dark:bg-accent-400/10 flex items-center justify-center mb-2">
-                  <LifeBuoy className="h-5 w-5 text-accent-500 dark:text-accent-400" />
+                <div className="h-10 w-10 rounded-lg bg-accent-500/10 flex items-center justify-center mb-2">
+                  <LifeBuoy className="h-5 w-5 text-accent-500" />
                 </div>
                 <CardTitle className="text-xl">Authenticated Ticket Portal</CardTitle>
                 <CardDescription>
@@ -188,7 +85,7 @@ export default function SupportPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-cyber-200 dark:border-cyber-800 bg-cyber-900/30">
+            <Card className="border-cyber-200 bg-[#f9f9f9]">
               <CardHeader>
                 <CardTitle className="text-lg">Enterprise Security Desk</CardTitle>
                 <CardDescription>
@@ -237,4 +134,3 @@ export default function SupportPage() {
     </div>
   );
 }
-

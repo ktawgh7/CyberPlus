@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
 import { CyberPlusLogo } from "@/components/ui/logo";
 
 const footerLinks = {
@@ -29,14 +28,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-3 group">
+            <div className="flex items-center gap-2 mb-3">
               <CyberPlusLogo size={28} className="h-7 w-7" />
               <span className="text-base font-bold tracking-tight text-[#171a20]">
                 Cyber<span className="text-[#3e6ae1]">Plus</span>
               </span>
-            </Link>
+            </div>
             <p className="text-sm text-[#5c5e62] mb-3">
-              Proving you are a human
+              Proving you&apos;re a human
             </p>
             <p className="text-xs text-[#8e8e93]">
               contact@cyberplus.id
