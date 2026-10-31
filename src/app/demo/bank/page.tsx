@@ -152,8 +152,8 @@ export default function BankDemoPage() {
         {/* The $25M Story Recall Banner */}
         <div className="p-4 rounded-xl border border-[#e2e2e2] bg-[#f9f9f9] text-[#171a20] flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <div className="space-y-1">
-            <div className="flex items-center gap-2 text-danger font-semibold text-sm">
-              <AlertTriangle className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-[#171a20] font-semibold text-sm">
+              <AlertTriangle className="w-4 h-4 text-[#3e6ae1]" />
               The $25 Million Deepfake Scam:
             </div>
             <p className="text-xs text-[#5c5e62] leading-relaxed max-w-3xl">
@@ -163,7 +163,7 @@ export default function BankDemoPage() {
             </p>
           </div>
           <div className="flex-shrink-0">
-            <Badge variant="destructive" className="text-xs">
+            <Badge variant="secondary" className="text-xs">
               Incident Replay
             </Badge>
           </div>
@@ -263,12 +263,12 @@ export default function BankDemoPage() {
                       onClick={() => setScenario("cfo_deepfake")}
                       className={`p-3 rounded-lg text-left border transition-all ${
                         scenario === "cfo_deepfake"
-                          ? "border-danger bg-danger/5 text-[#171a20]"
+                          ? "border-[#171a20] bg-[#f4f4f4] text-[#171a20]"
                           : "border-[#e2e2e2] bg-[#f9f9f9] text-[#5c5e62] hover:border-[#d0d1d2]"
                       }`}
                     >
                       <div className="flex items-center gap-2 mb-1">
-                        <Video className={`w-4 h-4 ${scenario === "cfo_deepfake" ? "text-danger" : "text-[#5c5e62]"}`} />
+                        <Video className={`w-4 h-4 ${scenario === "cfo_deepfake" ? "text-[#171a20]" : "text-[#5c5e62]"}`} />
                         <span className="text-xs font-semibold">1. Deepfake CFO on Video Call</span>
                       </div>
                       <p className="text-[11px] text-[#5c5e62] leading-snug">
@@ -364,7 +364,7 @@ export default function BankDemoPage() {
             <Card
               className={`border transition-all shadow-xs ${
                 result.status === "blocked"
-                  ? "border-danger/40 bg-red-50/50"
+                  ? "border-[#d0d1d2] bg-[#f9f9f9]"
                   : result.status === "approved"
                   ? "border-emerald-500/40 bg-emerald-50/50"
                   : "border-[#e2e2e2] bg-white"
@@ -373,7 +373,7 @@ export default function BankDemoPage() {
               <CardHeader>
                 <CardTitle className="text-base text-[#171a20] flex items-center gap-2">
                   {result.status === "blocked" ? (
-                    <XCircle className="w-5 h-5 text-danger" />
+                    <XCircle className="w-5 h-5 text-[#171a20]" />
                   ) : result.status === "approved" ? (
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                   ) : (
@@ -397,20 +397,20 @@ export default function BankDemoPage() {
 
                 {result.status === "blocked" && (
                   <div className="space-y-3">
-                    <div className="p-3 rounded-lg bg-red-100/60 border border-red-300 text-red-900">
-                      <div className="font-bold text-sm flex items-center gap-2 text-danger">
-                        <ShieldAlert className="w-4 h-4 text-danger" />
+                    <div className="p-3 rounded-lg bg-[#f4f4f4] border border-[#d0d1d2] text-[#171a20]">
+                      <div className="font-bold text-sm flex items-center gap-2 text-[#171a20]">
+                        <ShieldAlert className="w-4 h-4 text-[#171a20]" />
                         {result.message}
                       </div>
-                      <p className="text-xs mt-2 leading-relaxed text-red-800">
+                      <p className="text-xs mt-2 leading-relaxed text-[#5c5e62]">
                         {result.details}
                       </p>
                     </div>
 
-                    <div className="p-3 rounded-lg bg-[#f9f9f9] border border-[#e2e2e2] text-[11px] font-mono space-y-1.5 text-[#5c5e62]">
+                    <div className="p-3 rounded-lg bg-white border border-[#e2e2e2] text-[11px] font-mono space-y-1.5 text-[#5c5e62]">
                       <div className="text-[#171a20] font-semibold mb-1">Defense Metrics:</div>
-                      <div>• Zero-Knowledge Proof: <span className="text-danger font-semibold">REJECTED</span></div>
-                      <div>• Merkle Root Match: <span className="text-danger">FAILED (Unknown Leaf)</span></div>
+                      <div>• Zero-Knowledge Proof: <span className="text-[#171a20] font-semibold">REJECTED</span></div>
+                      <div>• Merkle Root Match: <span className="text-[#171a20]">FAILED (Unknown Leaf)</span></div>
                       <div>• Wire Outflow: <span className="text-emerald-600 font-semibold">$0.00 (TRANSFER ABORTED)</span></div>
                       <div>• Audit Chain: <span className="text-[#171a20]">Logged to tamper-evident ledger</span></div>
                     </div>

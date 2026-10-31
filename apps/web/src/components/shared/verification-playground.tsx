@@ -121,7 +121,7 @@ export function VerificationPlayground() {
             variant="outline"
             onClick={() => runVerificationSimulation(false)}
             disabled={loading}
-            className="border-danger/50 text-danger hover:bg-danger/10"
+            className="border-[#d0d1d2] text-[#171a20] hover:bg-[#f4f4f4]"
           >
             Simulate Bot / Impostor Failure
           </Button>
@@ -132,14 +132,14 @@ export function VerificationPlayground() {
           <div
             className={`p-4 rounded-xl border flex items-start gap-3 ${
               result.verified
-                ? "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300"
-                : "bg-red-50 dark:bg-red-950/40 border-red-300 dark:border-red-500/40 text-red-800 dark:text-red-300"
+                ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                : "bg-[#f4f4f4] border-[#d0d1d2] text-[#171a20]"
             }`}
           >
             {result.verified ? (
-              <CheckCircle2 className="h-6 w-6 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+              <CheckCircle2 className="h-6 w-6 text-emerald-600 shrink-0 mt-0.5" />
             ) : (
-              <XCircle className="h-6 w-6 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
+              <XCircle className="h-6 w-6 text-[#171a20] shrink-0 mt-0.5" />
             )}
             <div className="space-y-1 text-sm">
               <div className="font-bold text-base flex items-center gap-2">
@@ -148,13 +148,13 @@ export function VerificationPlayground() {
               </div>
               {result.nullifier && (
                 <p className="font-mono text-xs opacity-90">
-                  App-Scoped Nullifier: <span className="text-[#171a20] dark:text-white font-bold">{result.nullifier}</span>
+                  App-Scoped Nullifier: <span className="text-[#171a20] font-bold">{result.nullifier}</span>
                 </p>
               )}
               {result.proofTimeMs && (
                 <p className="text-xs opacity-75">ZK Proof Generation &amp; Validation: {result.proofTimeMs}ms</p>
               )}
-              {result.reason && <p className="text-xs text-red-600 dark:text-red-200">{result.reason}</p>}
+              {result.reason && <p className="text-xs text-[#5c5e62]">{result.reason}</p>}
             </div>
           </div>
         )}

@@ -200,8 +200,8 @@ export default function SocialDemoPage() {
             )}
 
             {botError && (
-              <div className="p-3 rounded-lg bg-red-950/30 border border-red-500/30 text-xs text-red-300 flex items-center gap-2">
-                <XCircle className="h-4 w-4 shrink-0 text-red-400" />
+              <div className="p-3 rounded-lg bg-[#f4f4f4] border border-[#d0d1d2] text-xs text-[#171a20] flex items-center gap-2">
+                <XCircle className="h-4 w-4 shrink-0 text-[#5c5e62]" />
                 <span>{botError}</span>
               </div>
             )}
@@ -213,7 +213,7 @@ export default function SocialDemoPage() {
                 size="sm"
                 onClick={handleBotAttackSimulation}
                 disabled={verifying}
-                className="border-red-500/40 text-danger hover:bg-danger/10 text-xs"
+                className="border-[#d0d1d2] text-[#171a20] hover:bg-[#f4f4f4] text-xs"
               >
                 <Bot className="mr-1.5 h-3.5 w-3.5" /> Simulate Bot Script Attack
               </Button>

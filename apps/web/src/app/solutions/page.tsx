@@ -147,8 +147,8 @@ export default function SolutionsPage() {
                     <h3 className="text-xs font-bold text-cyber-500 uppercase tracking-wider">
                       Attack Scenario
                     </h3>
-                    <div className="p-3 rounded-lg bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-500/30 text-xs text-red-700 dark:text-red-300">
-                      <span className="font-semibold block mb-1">Traditional Failure:</span>
+                    <div className="p-3 rounded-lg bg-[#f4f4f4] border border-[#d0d1d2] text-xs text-[#393c41]">
+                      <span className="font-semibold text-[#171a20] block mb-1">Traditional Failure:</span>
                       Synthetic bot or audio clone tricks human reviewer or visual KYC check.
                     </div>
                     <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-500/30 text-xs text-emerald-700 dark:text-emerald-300">

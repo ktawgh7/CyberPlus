@@ -96,7 +96,7 @@ export function mountWidget(config) {
         });
       }
     } catch (err) {
-      btn.style.background = "#dc2626";
+      btn.style.background = "#171a20";
       btn.innerHTML = `<span>✕ Verification Failed</span>`;
       setTimeout(() => {
         btn.disabled = false;

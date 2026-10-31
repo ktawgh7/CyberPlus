@@ -77,7 +77,7 @@ const solutions = [
     title: "Dating Apps",
     description: "Every match is a verified human. No catfishing, no deepfake profiles, no bots swiping.",
     href: "/solutions",
-    color: "text-rose-600",
+    color: "text-[#3e6ae1]",
   },
   {
     icon: Star,
@@ -165,13 +165,13 @@ export default function HomePage() {
       <Section dark>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <Badge variant="destructive" className="mb-4">
+            <Badge variant="secondary" className="mb-4">
               <AlertTriangle className="mr-1 h-3 w-3" />
               Real incident
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#171a20]">
               A finance worker joined a video call. The CFO and colleagues were
-              all <span className="text-danger">deepfakes</span>.
+              all <span className="text-[#3e6ae1]">deepfakes</span>.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-[#5c5e62] leading-relaxed">
               Result: $25 million wired to fraudsters. Faces and voices used
@@ -187,23 +187,23 @@ export default function HomePage() {
             </p>
           </div>
           <div className="relative">
-            <div className="rounded-2xl border border-danger/30 bg-white p-8 shadow-xs">
+            <div className="rounded-2xl border border-[#e2e2e2] bg-white p-8 shadow-xs">
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {["CFO", "Director", "Manager", "Analyst"].map((role) => (
                   <div
                     key={role}
                     className="rounded-xl bg-[#f9f9f9] border border-[#e2e2e2] p-4 text-center"
                   >
-                    <UserX className="h-8 w-8 mx-auto text-danger mb-2" />
+                    <UserX className="h-8 w-8 mx-auto text-[#5c5e62] mb-2" />
                     <p className="text-sm font-semibold text-[#171a20]">{role}</p>
-                    <Badge variant="destructive" className="mt-1 text-[10px]">
+                    <Badge variant="secondary" className="mt-1 text-[10px]">
                       DEEPFAKE
                     </Badge>
                   </div>
                 ))}
               </div>
               <div className="text-center pt-2">
-                <p className="text-3xl font-bold text-danger">$25,000,000</p>
+                <p className="text-3xl font-bold text-[#171a20]">$25,000,000</p>
                 <p className="text-xs text-[#5c5e62] mt-1">
                   Wired to fraudsters in Hong Kong
                 </p>
@@ -251,10 +251,10 @@ export default function HomePage() {
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Fake CFO */}
-          <Card className="border-danger/30 overflow-hidden bg-white">
-            <div className="bg-danger/10 p-4 flex items-center gap-3 border-b border-danger/20">
-              <Video className="h-5 w-5 text-danger" />
-              <span className="font-semibold text-danger">Impostor Call</span>
+          <Card className="border-[#d0d1d2] overflow-hidden bg-white">
+            <div className="bg-[#f4f4f4] p-4 flex items-center gap-3 border-b border-[#e2e2e2]">
+              <Video className="h-5 w-5 text-[#171a20]" />
+              <span className="font-semibold text-[#171a20]">Impostor Call</span>
               <Badge variant="destructive" className="ml-auto text-[10px]">
                 DEEPFAKE
               </Badge>
@@ -262,18 +262,18 @@ export default function HomePage() {
             <CardContent className="pt-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-danger shrink-0 mt-0.5" />
+                  <XCircle className="h-5 w-5 text-[#5c5e62] shrink-0 mt-0.5" />
                   <p className="text-sm font-medium text-[#171a20]">
                     &ldquo;Approve the $25M transfer now.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg bg-danger/10 p-4 border border-danger/20">
-                  <p className="text-xs font-semibold text-danger mb-1">
+                <div className="rounded-lg bg-[#f4f4f4] p-4 border border-[#e2e2e2]">
+                  <p className="text-xs font-semibold text-[#5c5e62] mb-1">
                     CyberPlus verification requested…
                   </p>
                   <div className="flex items-center gap-2">
-                    <XCircle className="h-4 w-4 text-danger" />
-                    <span className="text-sm font-bold text-danger">
+                    <XCircle className="h-4 w-4 text-[#171a20]" />
+                    <span className="text-sm font-bold text-[#171a20]">
                       FAILED — No valid proof of human
                     </span>
                   </div>

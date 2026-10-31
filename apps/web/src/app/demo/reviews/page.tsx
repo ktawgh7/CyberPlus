@@ -174,8 +174,8 @@ export default function ReviewsDemoPage() {
           )}
 
           {errorMsg && (
-            <div className="p-3 mb-4 rounded-lg bg-red-950/30 border border-red-500/30 text-xs text-red-300 flex items-center gap-2">
-              <XCircle className="h-4 w-4 shrink-0 text-red-400" />
+            <div className="p-3 mb-4 rounded-lg bg-[#f4f4f4] border border-[#d0d1d2] text-xs text-[#171a20] flex items-center gap-2">
+              <XCircle className="h-4 w-4 shrink-0 text-[#5c5e62]" />
               <span>{errorMsg}</span>
             </div>
           )}

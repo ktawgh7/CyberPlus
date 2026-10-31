@@ -222,7 +222,7 @@ export default function ProductPage() {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Card className="border-cyber-200 dark:border-cyber-800">
             <CardHeader>
-              <ShieldAlert className="h-8 w-8 text-danger mb-2" />
+              <ShieldAlert className="h-8 w-8 text-[#3e6ae1] mb-2" />
               <CardTitle className="text-lg">Instant Freeze on Suspicion</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground space-y-2">

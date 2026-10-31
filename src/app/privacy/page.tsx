@@ -42,9 +42,9 @@ export default function PrivacyPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-danger/30 bg-danger/5 dark:bg-danger/10">
+            <Card className="border-[#d0d1d2] bg-[#f9f9f9]">
               <CardContent className="pt-6">
-                <div className="flex items-center gap-2 text-danger font-bold mb-4">
+                <div className="flex items-center gap-2 text-[#171a20] font-bold mb-4">
                   <XCircle className="h-5 w-5" />
                   <span>What We NEVER Store or Harvest</span>
                 </div>

@@ -13,7 +13,7 @@ const buttonVariants = cva(
         secondary: "bg-white text-[#171a20] hover:bg-[#f4f4f4] border border-[#d0d1d2] shadow-2xs",
         /* Tesla inverted */
         tesla: "bg-[#171a20] text-white hover:bg-[#393c41] font-medium shadow-xs",
-        destructive: "bg-danger text-white hover:bg-danger/90 shadow-xs",
+        destructive: "bg-[#171a20] text-white hover:bg-[#393c41] shadow-xs",
         outline: "border border-[#d0d1d2] text-[#171a20] hover:bg-[#f4f4f4] bg-transparent",
         ghost: "text-[#5c5e62] hover:text-[#171a20] hover:bg-[#f4f4f4]",
         link: "text-[#3e6ae1] underline-offset-4 hover:underline p-0 h-auto font-medium",

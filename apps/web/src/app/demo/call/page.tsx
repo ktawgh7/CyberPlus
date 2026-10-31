@@ -58,7 +58,7 @@ export default function CallDemoPage() {
       id: "treasury",
       name: "Marcus Vance",
       role: "Treasury Operations Director",
-      avatarBg: "from-amber-600/30 to-orange-600/30",
+      avatarBg: "from-slate-600/30 to-zinc-600/30",
       isDeepfake: false,
       verified: true,
       tier: 2,
@@ -246,7 +246,7 @@ export default function CallDemoPage() {
                 key={p.id}
                 className={`relative rounded-xl overflow-hidden aspect-video border transition-all ${
                   isCFO && p.isDeepfake && !p.verified
-                    ? "border-danger shadow-[0_0_20px_rgba(232,33,39,0.15)] bg-red-50/20"
+                    ? "border-[#171a20] shadow-sm bg-[#f4f4f4]"
                     : p.verified
                     ? "border-emerald-300 bg-white"
                     : "border-[#e2e2e2] bg-[#f9f9f9]"
@@ -269,7 +269,7 @@ export default function CallDemoPage() {
                       </div>
                     )}
                     {isCFO && p.isDeepfake && !p.verified && (
-                      <div className="absolute -bottom-1 -right-1 bg-danger text-white p-1.5 rounded-full shadow-md animate-bounce">
+                      <div className="absolute -bottom-1 -right-1 bg-[#171a20] text-white p-1.5 rounded-full shadow-md animate-bounce">
                         <ShieldAlert className="w-4 h-4" />
                       </div>
                     )}
@@ -280,8 +280,8 @@ export default function CallDemoPage() {
 
                   {/* Status Overlay for CFO */}
                   {isCFO && p.isDeepfake && !p.verified && (
-                    <div className="mt-4 px-3 py-1.5 rounded-md bg-red-100/70 border border-red-300 text-red-800 text-[11px] font-medium flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5 text-danger flex-shrink-0" />
+                    <div className="mt-4 px-3 py-1.5 rounded-md bg-[#f4f4f4] border border-[#d0d1d2] text-[#171a20] text-[11px] font-medium flex items-center gap-1.5">
+                      <AlertTriangle className="w-3.5 h-3.5 text-[#171a20] flex-shrink-0" />
                       <span>UNVERIFIED CALLER — POSSIBLE SYNTHETIC DEEPFAKE</span>
                     </div>
                   )}
@@ -317,7 +317,7 @@ export default function CallDemoPage() {
                       Verified Human (Tier {p.tier || 2})
                     </Badge>
                   ) : isCFO && p.isDeepfake ? (
-                    <Badge className="bg-danger text-white border-danger text-[10px] font-semibold flex items-center gap-1 animate-pulse">
+                    <Badge className="bg-[#171a20] text-white border-[#171a20] text-[10px] font-semibold flex items-center gap-1 animate-pulse">
                       <ShieldAlert className="w-3 h-3 text-white" />
                       Synthetic Risk Detected
                     </Badge>
@@ -344,7 +344,7 @@ export default function CallDemoPage() {
               size="sm"
               variant="outline"
               onClick={() => setMicMuted(!micMuted)}
-              className={`border-[#e2e2e2] text-xs ${micMuted ? "bg-red-50 text-danger border-red-200" : "text-[#171a20]"}`}
+              className={`border-[#e2e2e2] text-xs ${micMuted ? "bg-[#f4f4f4] text-[#171a20] border-[#d0d1d2]" : "text-[#171a20]"}`}
             >
               {micMuted ? <MicOff className="w-4 h-4 mr-1.5" /> : <Mic className="w-4 h-4 mr-1.5" />}
               {micMuted ? "Unmute" : "Mute"}
@@ -353,7 +353,7 @@ export default function CallDemoPage() {
               size="sm"
               variant="outline"
               onClick={() => setVideoDisabled(!videoDisabled)}
-              className={`border-[#e2e2e2] text-xs ${videoDisabled ? "bg-red-50 text-danger border-red-200" : "text-[#171a20]"}`}
+              className={`border-[#e2e2e2] text-xs ${videoDisabled ? "bg-[#f4f4f4] text-[#171a20] border-[#d0d1d2]" : "text-[#171a20]"}`}
             >
               {videoDisabled ? <VideoOff className="w-4 h-4 mr-1.5" /> : <Video className="w-4 h-4 mr-1.5" />}
               {videoDisabled ? "Start Video" : "Stop Video"}
@@ -388,7 +388,7 @@ export default function CallDemoPage() {
               )}
             </Button>
 
-            <Button size="sm" variant="outline" className="border-[#e2e2e2] text-xs text-danger hover:bg-red-50">
+            <Button size="sm" variant="outline" className="border-[#e2e2e2] text-xs text-[#171a20] hover:bg-[#f4f4f4]">
               <PhoneOff className="w-4 h-4 mr-1.5" /> Leave
             </Button>
           </div>
@@ -399,13 +399,13 @@ export default function CallDemoPage() {
           <div
             className={`p-4 rounded-xl border text-xs leading-relaxed ${
               cfoChallengeResult.startsWith("FAILED")
-                ? "bg-red-50 border-red-300 text-red-900"
+                ? "bg-[#f4f4f4] border-[#d0d1d2] text-[#171a20]"
                 : "bg-emerald-50 border-emerald-300 text-emerald-900"
             }`}
           >
             <div className="font-bold mb-1 flex items-center gap-1.5">
               {cfoChallengeResult.startsWith("FAILED") ? (
-                <ShieldAlert className="w-4 h-4 text-danger" />
+                <ShieldAlert className="w-4 h-4 text-[#171a20]" />
               ) : (
                 <CheckCircle2 className="w-4 h-4 text-emerald-700" />
               )}

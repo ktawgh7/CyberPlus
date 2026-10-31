@@ -45,12 +45,12 @@ export default function SupportPage() {
       {/* EMERGENCY COMPROMISE HERO BANNER */}
       <Section className="pt-0">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-danger/40 bg-danger/5 dark:bg-danger/10 p-6 md:p-8 glow-accent">
+          <Card className="border-[#d0d1d2] bg-[#f9f9f9] p-6 md:p-8 glow-accent">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <ShieldAlert className="h-6 w-6 text-danger" />
-                  <span className="font-bold text-lg text-danger">Emergency Security Action</span>
+                  <ShieldAlert className="h-6 w-6 text-[#3e6ae1]" />
+                  <span className="font-bold text-lg text-[#171a20]">Emergency Security Action</span>
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">
                   Report a Compromised or Stolen Key
@@ -62,7 +62,7 @@ export default function SupportPage() {
 
               <div className="flex flex-col gap-2 shrink-0">
                 <a href="mailto:emergency@cyberplus.id?subject=Urgent%20Key%20Freeze%20Request">
-                  <Button variant="destructive" size="lg" className="w-full">
+                  <Button variant="tesla" size="lg" className="w-full">
                     <Key className="mr-2 h-4 w-4" />
                     Instant Key Freeze (Emergency Desk)
                   </Button>
@@ -101,11 +101,11 @@ export default function SupportPage() {
             )}
 
             {status === "error" && (
-              <div className="p-4 rounded-xl bg-red-950/30 border border-red-500/30 text-red-300 text-sm flex items-start gap-3 mb-6">
-                <AlertCircle className="h-5 w-5 text-red-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-[#f4f4f4] border border-[#d0d1d2] text-[#171a20] text-sm flex items-start gap-3 mb-6">
+                <AlertCircle className="h-5 w-5 text-[#5c5e62] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold">Submission Failed</p>
-                  <p className="text-xs text-red-400 mt-1">{errorMsg}</p>
+                  <p className="text-xs text-[#5c5e62] mt-1">{errorMsg}</p>
                 </div>
               </div>
             )}

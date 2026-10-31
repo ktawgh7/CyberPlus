@@ -110,7 +110,7 @@ export default function SecurityPage() {
 
             <Card className="border-cyber-200 dark:border-cyber-800">
               <CardHeader>
-                <ShieldAlert className="h-6 w-6 text-danger mb-2" />
+                <ShieldAlert className="h-6 w-6 text-[#3e6ae1] mb-2" />
                 <CardTitle className="text-lg">Duress Code Safeguard</CardTitle>
               </CardHeader>
               <CardContent className="text-xs text-muted-foreground leading-relaxed space-y-2">
