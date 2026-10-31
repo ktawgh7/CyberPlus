@@ -113,15 +113,6 @@ export default function HomePage() {
             that bots, deepfakes, and fraudsters cannot copy &mdash; without exposing who they are.
           </p>
 
-          <div className="mt-2">
-            <Link
-              href="/product"
-              className="inline-block text-sm font-medium text-[#171a20] underline underline-offset-4 hover:text-[#3e6ae1] transition-colors"
-            >
-              Zero-Knowledge Biometric Architecture Available
-            </Link>
-          </div>
-
           {/* Side-by-side Tesla CTA Buttons: Electric Blue "Order Now" style & White "Learn More" style */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/pricing">
