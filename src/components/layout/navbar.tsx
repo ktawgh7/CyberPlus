@@ -44,7 +44,7 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
+        <div className="flex h-[60px] items-center justify-between">
           {/* Logo — Tesla style sleek typography with exact Shield+ logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <CyberPlusLogo size={28} className="h-7 w-7 transition-transform group-hover:scale-105" />
