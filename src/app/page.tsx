@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeader } from "@/components/layout/section";
 
 export const metadata: Metadata = {
-  title: "CyberPlus — Proving you're a human",
+  title: "CyberPlus — Proving you're human",
   description:
     "CyberPlus gives every person a verified proof-of-human profile that bots, deepfakes, and fraudsters cannot copy — without exposing who they are.",
 };
@@ -101,11 +101,11 @@ export default function HomePage() {
           </Badge>
 
           {/* Tesla-style bold title */}
-          <h1 className="text-[clamp(2.25rem,min(6vw,8.5dvh),4.5rem)] font-bold tracking-tight text-[#171a20] leading-[1.1]">
-            Proving you&apos;re a human
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#171a20] leading-[1.1]">
+            Proving you&apos;re human
           </h1>
 
-          <p className="mt-[clamp(0.75rem,2dvh,1.25rem)] text-[clamp(1rem,min(2vw,2.5dvh),1.25rem)] text-[#5c5e62] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#5c5e62] max-w-2xl mx-auto leading-relaxed">
             CyberPlus gives every person a verified &ldquo;proof of human&rdquo; profile
             that bots, deepfakes, and fraudsters cannot copy &mdash; without exposing who they are.
           </p>
@@ -118,11 +118,7 @@ export default function HomePage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/product">
-              <Button variant="secondary" size="xl" className="min-w-[180px]">
-                See how it works
-              </Button>
-            </Link>
+
           </div>
         </div>
       </section>

@@ -74,22 +74,22 @@ export function Navbar() {
           >
             <CyberPlusLogo size={41} priority className="h-[40.32px] w-[40.32px]" />
             <span className="text-lg font-bold tracking-tight text-[#171a20]">
-              Cyber<span className="text-[#3e6ae1]">Plus</span>
+              CyberPlus
             </span>
           </Link>
 
           {/* Desktop Navigation — centered like Tesla.com */}
-          <div className="hidden lg:flex lg:items-center lg:gap-1">
+          <div className="hidden lg:flex lg:items-center lg:gap-1 group/nav">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 prefetch
                 className={cn(
-                  "rounded-md px-3.5 py-1.5 text-sm font-medium tracking-normal transition-colors",
+                  "rounded-md px-3.5 py-1.5 text-sm font-medium tracking-normal transition-colors hover:bg-[#f4f4f4] hover:text-[#171a20]",
                   pathname === item.href || pathname.startsWith(item.href + "/")
-                    ? "text-[#171a20] font-semibold bg-[#f4f4f4]"
-                    : "text-[#393c41] hover:text-[#171a20] hover:bg-[#f4f4f4]"
+                    ? "text-[#171a20] font-semibold bg-[#f4f4f4] group-hover/nav:bg-transparent"
+                    : "text-[#393c41]"
                 )}
               >
                 {item.name}

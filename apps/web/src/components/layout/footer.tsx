@@ -31,7 +31,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-3">
               <CyberPlusLogo size={28} className="h-7 w-7" />
               <span className="text-base font-bold tracking-tight text-[#171a20]">
-                Cyber<span className="text-[#3e6ae1]">Plus</span>
+                CyberPlus
               </span>
             </div>
             <p className="text-sm text-[#5c5e62] mb-3">
