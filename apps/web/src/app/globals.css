@@ -144,7 +144,8 @@
 }
 
 .page-calm-rise {
-  animation: calmRiseUp 720ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  /* Animation is triggered imperatively via Web Animations API on route change only.
+     No CSS animation here — prevents the visible "move up" on browser refresh. */
 }
 
 .nav-calm-fade {
